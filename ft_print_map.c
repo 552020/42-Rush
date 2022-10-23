@@ -23,12 +23,16 @@ int main (int argc, char **argv)
 	ft_print_map(DUMMY_MAP);
 	return (0);
 }
+
+
+
 void ft_print_map(int map[4][4][4])
 // void ft_print_map(int ***map)
 {
 	int i;
 	int j;
 	int k;
+	char c;
 
 	i = 0;
 	j = 0;
@@ -42,9 +46,12 @@ void ft_print_map(int map[4][4][4])
 			// printf("j index: %d \n", j);
 			while (k < 4)
 			{
-				if(map[i][j][k])
+				if(map[i][j][k]) if(1)
 				{
-					printf("%d ", k + 1);
+					c = '0' + k + 1;
+					write(1, &c,1);
+					write(1, " ", 1);
+					// printf("%d ", k + 1);
 				}
 				k++;
 			}
@@ -54,6 +61,6 @@ void ft_print_map(int map[4][4][4])
 		}
 		i++;
 		j = 0;
-		printf("\n");
+		write(1, "\n", 1);
 	}
 }
